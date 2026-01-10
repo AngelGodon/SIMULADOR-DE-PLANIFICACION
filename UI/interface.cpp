@@ -8,6 +8,7 @@
 #include "../Core/algorithms/sjf.cpp"
 #include "../Core/algorithms/round_robin.cpp"
 #include "../Core/algorithms/priority.cpp"
+#include "../Utils/file_handler.h"
 
 using namespace std;
 
@@ -41,7 +42,6 @@ int main() {
         cout << "Cuantos procesos vas a registrar?: ";
         cin >> n;
 
-        //TODO: LECTRUA DE ARCHIVOS
         for (int i = 0; i < n; i++) {
             string id;
             int lleg, ejec, prio;
@@ -52,6 +52,18 @@ int main() {
             cout << "Prioridad: "; cin >> prio;
             
             procesos.push_back(Proceso(id, lleg, ejec, prio));
+        }
+    } else if(tipo == 2) {
+        // Lectura desde archivo CSV
+        string nombreArchivo;
+        cout << "Ingresa el nombre del archivo (ej: procesos_prueba.csv): ";
+        cin >> nombreArchivo;
+        
+        try {
+            procesos = leerProcesosDesdeArchivo(nombreArchivo);
+        } catch (const exception& e) {
+            cerr << "\nNo se pudieron cargar los procesos. El programa terminará." << endl;
+            return 1;
         }
     }
     
