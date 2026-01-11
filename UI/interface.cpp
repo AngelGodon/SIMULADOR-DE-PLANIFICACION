@@ -141,7 +141,7 @@ int main() {
         
         try {
             procesos = leerProcesosDesdeArchivo(nombreArchivo);
-            clearScreen();
+            cout << "\nArchivo '" << nombreArchivo << "' leido correctamente. Continua con la seleccion de algoritmo." << endl;
             datosCargados = true; // datos desde archivo cargados correctamente
         } catch (const exception& e) {
             cerr << "\nNo se pudieron cargar los procesos desde archivo. Verifica el nombre y el formato. Volviendo al menu inicial..." << endl;
