@@ -8,7 +8,7 @@
 #include "../Core/algorithms/sjf.cpp"
 #include "../Core/algorithms/round_robin.cpp"
 #include "../Core/algorithms/priority.cpp"
-#include "../Utils/file_handler.h"
+#include "../Utils/file_handler.cpp"
 
 using namespace std;
 
@@ -62,7 +62,7 @@ int main() {
         try {
             procesos = leerProcesosDesdeArchivo(nombreArchivo);
         } catch (const exception& e) {
-            cerr << "\nNo se pudieron cargar los procesos. El programa terminará." << endl;
+            cerr << "\nNo se pudieron cargar los procesos." << endl;
             return 1;
         }
     }
