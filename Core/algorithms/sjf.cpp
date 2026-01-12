@@ -14,10 +14,8 @@ void ejecutarSJF(std::vector<Proceso>& procesos) {
     while (completados < tamProcesos) {
         int mejorProceso = -1;
         //no se me otra forma para saber el minimo inicial asi que solo puse un numero muy grande y ya
-        //TODO: buscar otra forma de hacer eso
         int minEjecucion = 999999999; 
 
-        // --- BUSQUEDA DEL PROCESO MÁS CORTO QUE YA HAYA LLEGADO ---
         for (int i = 0; i < tamProcesos; i++) {
             // Requisitos: 
             // 1. Que haya llegado al sistema
@@ -33,7 +31,6 @@ void ejecutarSJF(std::vector<Proceso>& procesos) {
         }
 
         if (mejorProceso != -1) {
-            //& para modificar el proceso original dentro de vector
             Proceso& p = procesos[mejorProceso];
             p.tiempoInicio = tActual;
             p.tiempoRespuesta = p.tiempoInicio - p.tiempoLlegada;

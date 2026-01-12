@@ -27,7 +27,7 @@ struct Proceso {
         tiempoLlegada = e_nec;
         tiempoRafaga = e_ej;
         prioirdad = e_prio;
-        //al inicio lo que resta es igual al ttal
+        //al inicio lo que resta es igual al total
         tiempoRestante = e_ej; 
         
         tiempoInicio = -1; 

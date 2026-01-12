@@ -10,13 +10,13 @@ void ejecutarRoundRobin(std::vector<Proceso>& procesos, int quantum) {
     int tActual = 0;
     int completados = 0;
     
-    //una cola para saber a qn le toca
+    //una cola para saber a quien le toca
     std::queue<int> cola;
     //para no repetir dos veces a un proceso en la cola
     std::vector<bool> yaEnLaCola(tamProcesos, false);
 
-    //hayyy que ordenarlo para saber cual va a ser ell primero en la cola
-    //TODO: esta funcion tambien se usa en fcfs, se podria cambiar a process por ejemplo asi las dos pueden usarlo sin repetir codigo
+    //hay que ordenarlo para saber cual va a ser el primero en la cola
+    // esta funcion tambien se usa en fcfs, se podria cambiar a process por ejemplo asi las dos pueden usarlo sin repetir codigo
     std::sort(procesos.begin(), procesos.end(), [](const Proceso& a, const Proceso& b) {
         return a.tiempoLlegada < b.tiempoLlegada;
     });
@@ -27,7 +27,7 @@ void ejecutarRoundRobin(std::vector<Proceso>& procesos, int quantum) {
 
     while (completados < tamProcesos) {
         if (cola.empty()) {
-            //si kla cola esta vacia pero aun faltan procesos que avanze el reloj igualito
+            //si la cola esta vacia pero aun faltan procesos que avanze el reloj igualito
             for(int i = 0; i < tamProcesos; i++) {
                 if(!yaEnLaCola[i]) {
                     tActual = procesos[i].tiempoLlegada;
