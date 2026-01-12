@@ -4,7 +4,7 @@
 
 ```bash
 cd UI
-g++ -std=c++17 "Ruta directa del archivo interface.cpp (elimminando las comillas)" -o simulador.exe
+g++ -std=c++17 "Ruta directa del archivo interface.cpp entre commmillas simples (ejemplo: 'c:\Universidad\SIMULADOR DE PLANIFICACION\UI\interface.cpp')" -o simulador.exe -static-libgcc -static-libstdc++ -static
 ```
 
 ## Ejecución del programa
