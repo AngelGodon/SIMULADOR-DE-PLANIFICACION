@@ -22,7 +22,6 @@ void ejecutarSJF(std::vector<Proceso>& procesos) {
             // 2. Que no se haya ejecutado todavía
             if (procesos[i].tiempoLlegada <= tActual && !terminado[i]) {
                 
-                // Si este proceso es más corto que el que habíamos visto antes...
                 if (procesos[i].tiempoRafaga < minEjecucion) {
                     minEjecucion = procesos[i].tiempoRafaga;
                     mejorProceso = i;
